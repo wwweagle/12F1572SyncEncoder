@@ -10,9 +10,9 @@ CND_CONF=default
 CND_DISTDIR=dist
 TMPDIR=build/${CND_CONF}/${IMAGE_TYPE}/tmp-packaging
 TMPDIRNAME=tmp-packaging
-OUTPUT_PATH=dist/${CND_CONF}/${IMAGE_TYPE}/NeuPixCoder12F.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
-OUTPUT_BASENAME=NeuPixCoder12F.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
-PACKAGE_TOP_DIR=neupixcoder12f.x/
+OUTPUT_PATH=dist/${CND_CONF}/${IMAGE_TYPE}/12F1572SyncEncoder.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+OUTPUT_BASENAME=12F1572SyncEncoder.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+PACKAGE_TOP_DIR=12f1572syncencoder/
 
 # Functions
 function checkReturnCode
@@ -57,15 +57,15 @@ mkdir -p ${TMPDIR}
 
 # Copy files and create directories and links
 cd "${TOP}"
-makeDirectory ${TMPDIR}/neupixcoder12f.x/bin
+makeDirectory ${TMPDIR}/12f1572syncencoder/bin
 copyFileToTmpDir "${OUTPUT_PATH}" "${TMPDIR}/${PACKAGE_TOP_DIR}bin/${OUTPUT_BASENAME}" 0755
 
 
 # Generate tar file
 cd "${TOP}"
-rm -f ${CND_DISTDIR}/${CND_CONF}/package/neupixcoder12f.x.tar
+rm -f ${CND_DISTDIR}/${CND_CONF}/package/12f1572syncencoder.tar
 cd ${TMPDIR}
-tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/package/neupixcoder12f.x.tar *
+tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/package/12f1572syncencoder.tar *
 checkReturnCode
 
 # Cleanup

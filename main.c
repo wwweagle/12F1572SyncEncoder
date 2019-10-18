@@ -41,6 +41,8 @@
     SOFTWARE.
  */
 
+#include <pic.h>
+
 #include "mcc_generated_files/mcc.h"
 void handleTMR0(void);
 
@@ -59,7 +61,7 @@ void main(void) {
     TMR0_SetInterruptHandler(handleTMR0);
 
     // Enable the Peripheral Interrupts
-    //INTERRUPT_PeripheralInterruptEnable();
+    INTERRUPT_PeripheralInterruptEnable();
 
     // Disable the Global Interrupts
     //INTERRUPT_GlobalInterruptDisable();
@@ -71,7 +73,9 @@ void main(void) {
     
 
 
-
+    while(1){
+        NOP();
+    }
     
 }
 
